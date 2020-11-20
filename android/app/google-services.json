@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "527188673014",
+    "firebase_url": "https://prak-ppl.firebaseio.com",
+    "project_id": "prak-ppl",
+    "storage_bucket": "prak-ppl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527188673014:android:8619ca28ccc56bd13347d7",
+        "android_client_info": {
+          "package_name": "com.example.prak_ppl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527188673014-bqg89v9rbdrhghtm1glssaeuoej3n8q9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9DIx5uCrgEdsI_SI92gidvJ832Lzyy0U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527188673014-bqg89v9rbdrhghtm1glssaeuoej3n8q9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
