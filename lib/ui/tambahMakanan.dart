@@ -7,7 +7,7 @@ class TambahMakanan extends StatefulWidget {
 
 class _TambahMakananState extends State<TambahMakanan> {
   TextEditingController nameController = TextEditingController();
-  String namaPasien = '';
+  String namaMakanan = '';
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class _TambahMakananState extends State<TambahMakanan> {
                   ),
                   onChanged: (text) {
                     setState(() {
-                      namaPasien = text;
+                      namaMakanan = text;
                     });
                   },
                 )),
