@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prak_ppl/ui/tambahMakanan.dart';
 
 class DashboardPasien extends StatefulWidget {
   @override
@@ -7,14 +8,14 @@ class DashboardPasien extends StatefulWidget {
 
 class _DashboardPasienState extends State<DashboardPasien> {
   List<String> namaMakanan = <String>[
-    'Nazi Goyeng',
-    'Es teh anget',
-    'Steak babi halal'
+    'Nasi Goreng Seafood',
+    'Indomie Ayam Bawang',
+    'Soto Ayam'
   ];
   List<String> deskripsi = <String>[
-    'sieg heil',
-    'Ngilu njir',
-    'Mana bisa gitu'
+    'Tidak aman, mengandung bahan pantangan/alergi',
+    'Aman',
+    'Aman'
   ];
 
   @override
@@ -29,18 +30,26 @@ class _DashboardPasienState extends State<DashboardPasien> {
       body: ListView.builder(
           itemCount: namaMakanan.length,
           itemBuilder: (BuildContext context, int index) {
+            final number = index + 1;
             return Card(
                 child:
                     Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
               ListTile(
-                title: Text('${namaMakanan[index]}'),
+                leading: Text(number.toString()),
+                title: Text('${namaMakanan[index]}',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
                 subtitle: Text('${deskripsi[index]}'),
               ),
             ]));
           }),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.grey[700],
-        onPressed: (null),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TambahMakanan()),
+          );
+        },
         child: const Icon(Icons.add),
       ),
     );

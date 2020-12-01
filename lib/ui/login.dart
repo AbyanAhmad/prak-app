@@ -39,6 +39,7 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey[700],
         title: Text('Login Pasien'),
       ),
       body: Container(
