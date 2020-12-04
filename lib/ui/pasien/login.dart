@@ -49,6 +49,7 @@ class _SignInUserState extends State<SignInUser> {
             color: Colors.green,
             child: Text('Login Pasien', style: TextStyle(color: Colors.white)),
             onPressed: () {
+              Navigator.pop(context);
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => DashboardPasien()));
             },
