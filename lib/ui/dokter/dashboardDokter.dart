@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:prak_ppl/ui/dokter/tambahPasien.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:prak_ppl/ui/pasien/dashboardPasien.dart';
 
 class DashboardDokter extends StatefulWidget {
   DashboardDokter({this.app});
@@ -12,8 +14,6 @@ class DashboardDokter extends StatefulWidget {
 
 class _DashboardDokterState extends State<DashboardDokter> {
   final referenceDatase = FirebaseDatabase.instance;
-  final movieName = 'MovieTitle';
-  final movieController = TextEditingController();
   final dbRef = FirebaseDatabase.instance.reference().child("User");
   List<Map<dynamic, dynamic>> lists = [];
 
@@ -50,12 +50,27 @@ class _DashboardDokterState extends State<DashboardDokter> {
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
                         child: new InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DashboardPasien()));
+                          },
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("Nama: " + lists[index]["name"]),
-                              Text("Alergi: " + lists[index]["alergi"]),
+                              Text("Nama: " + lists[index]["name"],
+                                  style: GoogleFonts.poppins(
+                                      textStyle: TextStyle(
+                                          color: Color(0xFF252424),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.normal))),
+                              Text("Alergi: " + lists[index]["alergi"],
+                                  style: GoogleFonts.poppins(
+                                      textStyle: TextStyle(
+                                          color: Color(0xFF252424),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.normal))),
                             ],
                           ),
                         ),
