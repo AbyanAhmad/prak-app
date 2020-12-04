@@ -13,9 +13,6 @@ class _TambahMakananState extends State<TambahMakanan> {
   TextEditingController nameController = TextEditingController();
   String namaMakanan = '';
   final referenceDatase = FirebaseDatabase.instance;
-  //final movieName = 'MovieTitle';
-  final movieController = TextEditingController();
-  bool match = false;
 
   @override
   void initState() {
