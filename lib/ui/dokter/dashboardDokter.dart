@@ -59,19 +59,18 @@ class _DashboardDokterState extends State<DashboardDokter> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              ListTile(
-                              leading : Text("Nama: " + lists[index]["name"],
+                              Text("Nama: " + lists[index]["name"],
                                   style: GoogleFonts.poppins(
                                       textStyle: TextStyle(
                                           color: Color(0xFF252424),
                                           fontSize: 16,
                                           fontWeight: FontWeight.normal))),
-                              title : Text("Alergi: " + lists[index]["alergi"],
+                              Text("Alergi: " + lists[index]["alergi"],
                                   style: GoogleFonts.poppins(
                                       textStyle: TextStyle(
                                           color: Color(0xFF252424),
                                           fontSize: 16,
-                                          fontWeight: FontWeight.normal))),)
+                                          fontWeight: FontWeight.normal))),
                             ],
                           ),
                         ),
