@@ -85,10 +85,10 @@ class _RegisterState extends State<Register> {
             child: Text('Daftar', style: TextStyle(color: Colors.white)),
             onPressed: () {
               _userRef.push().set(<String, String>{
-                "Nama": "" + nama,
-                "Email": "" + email,
-                "Alergi": "" + alergi,
-                "Password": "" + password,
+                "name": "" + nama,
+                "email": "" + email,
+                "alergi": "" + alergi,
+                "password": "" + password,
               });
               //nameController.clear();
               showDialog(
