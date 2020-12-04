@@ -31,7 +31,7 @@ class _DokterSignInState extends State<DokterSignIn> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[700],
-        title: Text('Login Pasien'),
+        title: Text('Login Dokter'),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
