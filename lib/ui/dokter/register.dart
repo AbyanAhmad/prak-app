@@ -3,37 +3,34 @@
 //import 'package:firebase_database/ui/firebase_animated_list.dart';
 //import 'package:crud_firebase/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:prak_ppl/ui/dokter/dashboardDokter.dart';
 import 'package:prak_ppl/ui/dokter/login.dart';
-import 'package:prak_ppl/ui/dokter/register.dart';
-import 'package:prak_ppl/ui/pasien/dashboardPasien.dart';
-import 'package:prak_ppl/ui/pasien/login.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 //import 'package:firebase_database/firebase_database.dart';
 //import 'package:firebase_database/ui/firebase_animated_list.dart';
 
-class Register extends StatefulWidget {
-  Register({this.app});
+class RegisterDokter extends StatefulWidget {
+  RegisterDokter({this.app});
   final FirebaseApp app;
 
   @override
-  _RegisterState createState() => _RegisterState();
+  _RegisterDokterState createState() => _RegisterDokterState();
 }
 
-class _RegisterState extends State<Register> {
+class _RegisterDokterState extends State<RegisterDokter> {
   //final AuthService _auth = AuthService() ;
 
   String email = '';
   String password = '';
   String nama = '';
-  String alergi = '';
 
   DatabaseReference _userRef;
 
   @override
   void initState() {
     final FirebaseDatabase database = FirebaseDatabase(app: widget.app);
-    _userRef = database.reference().child('User');
+    _userRef = database.reference().child('Dokter');
 
     super.initState();
   }
@@ -43,7 +40,7 @@ class _RegisterState extends State<Register> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[700],
-        title: Text('Register Pasien'),
+        title: Text('Register Dokter'),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 50.0),
@@ -65,13 +62,6 @@ class _RegisterState extends State<Register> {
           ),
           Divider(),
           TextFormField(
-            onChanged: (val) {
-              setState(() => alergi = val);
-            },
-            decoration: InputDecoration(labelText: 'Alergi'),
-          ),
-          Divider(),
-          TextFormField(
             obscureText: true,
             onChanged: (val) {
               setState(() => password = val);
@@ -86,39 +76,10 @@ class _RegisterState extends State<Register> {
               _userRef.push().set(<String, String>{
                 "Nama": "" + nama,
                 "Email": "" + email,
-                "Alergi": "" + alergi,
                 "Password": "" + password,
               });
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => DashboardPasien()));
-            },
-          ),
-          Divider(),
-          RaisedButton(
-            color: Colors.green,
-            child: Text('Daftar Sebagai Dokter',
-                style: TextStyle(color: Colors.white)),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => RegisterDokter()));
-            },
-          ),
-          Divider(),
-          RaisedButton(
-            color: Colors.green,
-            child: Text('Login Dokter', style: TextStyle(color: Colors.white)),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => DokterSignIn()));
-            },
-          ),
-          Divider(),
-          RaisedButton(
-            color: Colors.green,
-            child: Text('Login Pasien', style: TextStyle(color: Colors.white)),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SignInUser()));
+                  MaterialPageRoute(builder: (context) => DashboardDokter()));
             },
           ),
         ])),
