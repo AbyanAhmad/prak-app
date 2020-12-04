@@ -3,13 +3,14 @@
 //import 'package:firebase_database/ui/firebase_animated_list.dart';
 //import 'package:crud_firebase/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:prak_ppl/ui/pasien/dashboardPasien.dart';
 
-class RegisterUser extends StatefulWidget {
+class SignInUser extends StatefulWidget {
   @override
-  _RegisterUserState createState() => _RegisterUserState();
+  _SignInUserState createState() => _SignInUserState();
 }
 
-class _RegisterUserState extends State<RegisterUser> {
+class _SignInUserState extends State<SignInUser> {
   //final AuthService _auth = AuthService() ;
 
   String email = '';
@@ -46,8 +47,11 @@ class _RegisterUserState extends State<RegisterUser> {
           ),
           RaisedButton(
             color: Colors.green,
-            child: Text('Daftar', style: TextStyle(color: Colors.white)),
-            onPressed: () async {},
+            child: Text('Login Pasien', style: TextStyle(color: Colors.white)),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DashboardPasien()));
+            },
           ),
         ])),
       ),
