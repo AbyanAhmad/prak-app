@@ -61,16 +61,20 @@ class _DashboardPasienState extends State<DashboardPasien> {
                     shrinkWrap: true,
                     itemCount: lists.length,
                     itemBuilder: (BuildContext context, int index) {
+                      final number = index + 1;
                       return Card(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("Nama Makanan:\n" + lists[index]["nama"],
-                                style: GoogleFonts.poppins(
-                                    textStyle: TextStyle(
-                                        color: Color(0xFF252424),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.normal))),
+                            ListTile(
+                              leading: Text(number.toString()),
+                              title: Text(lists[index]["nama"],
+                                  style: GoogleFonts.poppins(
+                                      textStyle: TextStyle(
+                                          color: Color(0xFF252424),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.normal))),
+                            )
                           ],
                         ),
                       );
