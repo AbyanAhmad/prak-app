@@ -23,8 +23,6 @@ class _DokterSignInState extends State<DokterSignIn> {
 
   String email = '';
   String password = '';
-  String nama = '';
-  String alergi = '';
 
   @override
   Widget build(BuildContext context) {
@@ -40,23 +38,9 @@ class _DokterSignInState extends State<DokterSignIn> {
           SizedBox(height: 20.0),
           TextFormField(
             onChanged: (val) {
-              setState(() => nama = val);
-            },
-            decoration: InputDecoration(labelText: 'Nama'),
-          ),
-          SizedBox(height: 20.0),
-          TextFormField(
-            onChanged: (val) {
               setState(() => email = val);
             },
-            decoration: InputDecoration(labelText: 'email'),
-          ),
-          SizedBox(height: 20.0),
-          TextFormField(
-            onChanged: (val) {
-              setState(() => alergi = val);
-            },
-            decoration: InputDecoration(labelText: 'alergi'),
+            decoration: InputDecoration(labelText: 'Email'),
           ),
           SizedBox(height: 20.0),
           TextFormField(

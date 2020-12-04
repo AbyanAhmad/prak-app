@@ -32,7 +32,7 @@ class _SignInUserState extends State<SignInUser> {
             onChanged: (val) {
               setState(() => email = val);
             },
-            decoration: InputDecoration(labelText: 'Nama'),
+            decoration: InputDecoration(labelText: 'Email'),
           ),
           SizedBox(height: 20.0),
           TextFormField(

@@ -60,14 +60,14 @@ class _RegisterState extends State<Register> {
             onChanged: (val) {
               setState(() => email = val);
             },
-            decoration: InputDecoration(labelText: 'email'),
+            decoration: InputDecoration(labelText: 'Email'),
           ),
           Divider(),
           TextFormField(
             onChanged: (val) {
               setState(() => alergi = val);
             },
-            decoration: InputDecoration(labelText: 'alergi'),
+            decoration: InputDecoration(labelText: 'Alergi'),
           ),
           Divider(),
           TextFormField(
@@ -83,10 +83,10 @@ class _RegisterState extends State<Register> {
             child: Text('Daftar', style: TextStyle(color: Colors.white)),
             onPressed: () {
               _userRef.push().set(<String, String>{
-                "name": "" + nama,
-                "bahan": "" + email,
-                "alergi": "" + alergi,
-                "password": "" + password,
+                "Nama": "" + nama,
+                "Email": "" + email,
+                "Alergi": "" + alergi,
+                "Password": "" + password,
               });
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => DashboardPasien()));
