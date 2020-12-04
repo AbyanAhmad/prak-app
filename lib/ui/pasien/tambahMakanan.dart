@@ -58,7 +58,7 @@ class _TambahMakananState extends State<TambahMakanan> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(16.0))),
               onPressed: () {
-                for (String i in alergi) namaMakanan == i ? match = true : match = false;
+                for (String i in alergi) if (namaMakanan == i)  {match = true; break; } else {match = false;}  
                 if (match == true) {
                   showDialog(
                       context: context,

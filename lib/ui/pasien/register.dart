@@ -3,9 +3,10 @@
 //import 'package:firebase_database/ui/firebase_animated_list.dart';
 //import 'package:crud_firebase/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:prak_ppl/ui/dialog_box/dialogBox.dart';
 import 'package:prak_ppl/ui/dokter/login.dart';
 import 'package:prak_ppl/ui/dokter/register.dart';
-import 'package:prak_ppl/ui/pasien/dashboardPasien.dart';
+//import 'package:prak_ppl/ui/pasien/dashboardPasien.dart';
 import 'package:prak_ppl/ui/pasien/login.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -89,8 +90,17 @@ class _RegisterState extends State<Register> {
                 "Alergi": "" + alergi,
                 "Password": "" + password,
               });
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => DashboardPasien()));
+              //nameController.clear();
+              showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return CustomDialogBox(
+                          title: "Akun Berhasil Terdaftar",
+                          descriptions:
+                              'Silahkan masuk melalui menu Login',
+                          text: "OK",
+                        );
+                      });
             },
           ),
           Divider(),

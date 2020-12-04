@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prak_ppl/ui/pasien/dashboardPasien.dart';
-import 'package:prak_ppl/ui//dokter/dashboardDokter.dart';
-import 'package:prak_ppl/ui/pasien/login.dart';
 import 'package:prak_ppl/ui/pasien/register.dart';
 
 void main() {

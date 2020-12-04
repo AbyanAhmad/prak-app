@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prak_ppl/ui/pasien/profile.dart';
 import 'package:prak_ppl/ui/pasien/tambahMakanan.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -45,7 +46,14 @@ class _DashboardPasienState extends State<DashboardPasien> {
           backgroundColor: Colors.grey[700],
           title: const Text('Riwayat Makan'),
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.account_circle), onPressed: null)
+            IconButton(
+                icon: Icon(Icons.account_circle),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Profile()),
+                  );
+                })
           ]),
       body: Column(children: [
         FutureBuilder(
