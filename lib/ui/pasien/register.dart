@@ -45,7 +45,7 @@ class _RegisterState extends State<Register> {
         title: Text('Register Pasien'),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric( horizontal: 50.0),
+        padding: EdgeInsets.symmetric(horizontal: 50.0),
         child: Form(
             child: Column(children: <Widget>[
           Divider(),
@@ -88,7 +88,7 @@ class _RegisterState extends State<Register> {
                 "alergi": "" + alergi,
                 "password": "" + password,
               });
-              Navigator.push(context,
+              Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => DashboardPasien()));
             },
           ),

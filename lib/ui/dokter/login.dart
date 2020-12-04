@@ -73,7 +73,7 @@ class _DokterSignInState extends State<DokterSignIn> {
             color: Colors.green,
             child: Text('Login Dokter', style: TextStyle(color: Colors.white)),
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => DashboardDokter()),
               );
