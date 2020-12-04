@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prak_ppl/ui/pasien/tambahMakanan.dart';
+import 'package:prak_ppl/ui/dokter/tambahPasien.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 
@@ -24,7 +24,6 @@ class _DashboardDokterState extends State<DashboardDokter> {
     //_moviesRef = database.reference().child('Makanan');
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +50,7 @@ class _DashboardDokterState extends State<DashboardDokter> {
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
                         child: new InkWell(
-                          onTap: (){},
+                          onTap: () {},
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
@@ -71,7 +70,7 @@ class _DashboardDokterState extends State<DashboardDokter> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => TambahMakanan()),
+            MaterialPageRoute(builder: (context) => TambahPasien()),
           );
         },
         child: const Icon(Icons.add),
